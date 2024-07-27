@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Box, createTheme, Stack, ThemeProvider } from '@mui/material';
+import { AppBarLayout } from './components/AppBarLayout';
+import Experiences from './components/Experiences';
+import Profiles from './components/Profiles';
+import Certificates from './components/Certificates';
+import Publications from './components/Publications';
 
 function App() {
+  const theme = createTheme({
+    palette: {
+      // mode: "dark"
+    }
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <AppBarLayout />
+      <Box display="flex" alignItems="center" margin={4} padding={7} fontSize="1.6rem">
+        I have about 6 years of experience in the industry. Which primarily is in C++, Python and Java. I am working as an Application engineer in Amazon and I have worked as a full stack dev for 4 years in Oracle and 1 year as Devops in Flytxt. I occasionally answer questions on stackoverflow particularly in Python. I also enjoy doing some side projects.
+      </Box>
+      <Stack spacing={4} padding={3}>
+        <Experiences />
+        <Profiles />
+        <Publications />
+        <Certificates />
+      </Stack>
+    </ThemeProvider>
   );
 }
 
