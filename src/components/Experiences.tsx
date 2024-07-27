@@ -93,13 +93,13 @@ export default function Experiences() {
                     )
                   }
                   </Stack>
-                  <List>
+                  <List sx={{display: "decimal"}}>
                     {
                       experience.points.map(point =>
-                        <ListItem disablePadding>
-                          <ListItemIcon>
+                        <ListItem disablePadding sx={{display: "list-item"}}> 
+                          {/* <ListItemIcon>
                             <Circle/>
-                          </ListItemIcon>
+                          </ListItemIcon> */}
                           <ListItemText primary={point} />
                         </ListItem>
                       )
